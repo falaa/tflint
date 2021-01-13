@@ -10,7 +10,7 @@ FROM alpine:3.12 as prod
 
 LABEL maintainer=terraform-linters
 
-RUN apk add --no-cache ca-certificates
+RUN apk add --no-cache ca-certificates git curl 
 
 COPY --from=builder /tflint/dist/tflint /usr/local/bin
 
